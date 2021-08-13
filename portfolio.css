@@ -1,0 +1,90 @@
+.flex-container {
+    /* We first create a flex layout context */
+    display: flex;
+    
+    /* Then we define the flow direction 
+       and if we allow the items to wrap 
+     * Remember this is the same as:
+     * flex-direction: row;
+     * flex-wrap: wrap;
+     */
+    flex-flow: row wrap;
+    
+    /* Then we define how is distributed the remaining space */
+    justify-content: space-evenly;
+    
+    padding: 0;
+    margin: 0;
+    list-style: none;
+  }
+
+
+.card {
+box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+transition: 0.3s;
+width: 30%;
+}
+
+.card:hover {
+box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+}
+
+.container {
+padding: 2px 16px;
+}
+
+div > h4,div > p {
+    text-align: center;
+    font-family: "Lato", sans-serif;
+    text-decoration: underline;
+
+}
+
+div > img {
+    height:350px;
+}
+
+.aTag{
+    background: white !important;
+    color: black !important;
+    text-decoration: underline !important;
+    animation: fadeInBottom 0s linear forwards !important;
+    animation-delay: 0s !important;
+}
+
+/* Below this screen size */
+@media only screen and (max-width: 1025px) {
+
+    .card {
+        margin-top: 25%;
+        width:40%;
+    }
+
+    div > img {
+        height:335px;
+    }
+
+
+    }
+
+/* Below this screen size */
+@media only screen and (max-width: 600px) {
+
+    .card {
+        width: 95%;
+    }
+
+    div > img {
+        height:225px;
+    }
+
+
+    }
+
+
+/* @media only screen and (max-width: 569px){
+.card {
+    width: 60%;
+}    
+}   
+     */

@@ -1,0 +1,976 @@
+ /* https://www.w3schools.com/howto/tryit.asp?filename=tryhow_js_sidenav   */
+ body{
+    margin: 0;
+}
+
+/* https://codepen.io/DraganaB/pen/xMOjgZ */
+html{
+	scroll-behavior: smooth;
+}
+
+ .sidenav {
+    height: 100%;
+    width: 0;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    right: 0;
+    background-color: black;
+    overflow-x: hidden;
+    transition: 0.5s;
+    padding-top: 60px;
+  }
+  
+  .sidenav a {
+    padding: 8px 8px 8px 32px;
+    text-decoration: none;
+    font-size: 25px;
+    color: white;
+    display: block;
+    transition: 0.3s;
+    font-family: "Lato", sans-serif;
+    text-align: center;
+
+
+  }
+  
+  .sidenav a:hover {
+    color: #f1f1f1;
+  }
+  
+  .sidenav .closebtn {
+    position: absolute;
+    top: 0;
+    right: 3%;
+    font-size: 36px;
+    margin-left: 50px;
+  }
+  
+  @media screen and (max-height: 450px) {
+    .sidenav {padding-top: 15px;}
+    .sidenav a {font-size: 18px;}
+  }
+
+  .navButton .right { 
+    right: 3%;
+    top: 1%;
+    position: absolute;
+    font-size: xx-large;
+}
+
+
+
+  section
+  {
+      /* position: absolute; */
+      width: 100%;
+      height: 100%;
+      /* background: #fff; */
+      display: grid;
+      justify-content: center;
+      align-items: center;
+      /* https://stackoverflow.com/questions/24246914/website-wont-scroll-down */
+      overflow: hidden;
+      /* https://www.tomred.net/css-html-js/disable-or-enable-horizontal-or-vertical-scrollbar.html#:~:text=To%20disable%20the%20horizontal%20scrollbar,expands%20to%20exceed%20the%20space. */
+      overflow-x: hidden;
+      /* top: 0px; */
+  }
+  
+  .header
+  {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 80px;
+      padding: 0 6%;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      box-sizing: border-box;
+      display:row;
+      font-family: "Lato", sans-serif;
+      background:white;
+
+  }
+  .header .logo
+  {
+      /* opacity: 0; */
+      margin: 0;
+      padding: 0;
+      font-size: 2em;
+      /* text-transform: uppercase; */  
+  }
+
+  .header ul
+  {
+      margin: 0;
+      padding: 0;
+      z-index: 100;
+      display: flex;
+  }
+  .header ul li
+  {
+      /* opacity: 0; */
+      list-style: none;
+      margin: 0 10px;
+      animation: fadeInRight 0.5s linear forwards;
+  }
+  .header ul li:last-child
+  {
+      margin-right: 0;
+  }
+  .header ul li a
+  {
+      text-decoration: none;
+      font-size: 1.2em;
+      color: black;
+      padding: 15px 10px;
+      letter-spacing: 2px;
+  }
+  .header ul li a.active,
+  .header ul li a:hover
+  {
+      background:black;
+      color: #fff;
+  }
+
+
+  @media only screen and (max-width: 800px) {
+    /* For desktop: */
+     section{
+         display:none;
+     }
+   
+  }
+
+  @media only screen and (max-width: 800px) {
+    /* For mobile: */
+     /* .logoMobile{
+         top:5px;
+         left: 5px;
+         position: absolute;
+         padding: 10px;
+         font-size: 1.5em;
+         text-decoration: none;
+         color:black;
+         font-family: "Lato", sans-serif;
+         font-weight: bold;
+
+     } */
+
+     .companySection1 {
+        padding-top: 0px !important;
+    }
+
+    .topSection2 {
+        text-align: center;
+        font-size: 1em !important;
+        padding: 10px;
+    }   
+  }
+
+  @media only screen and (min-width: 800px) {
+    /* For desktop: */
+     .logoMobile{
+        display: none;
+
+     }
+   
+  }
+
+.division{
+    display: grid;
+    grid-template-columns: repeat(1,1fr);
+    grid-auto-rows: auto;
+}
+
+.topSection{
+    text-align: center;
+    font-size: 1.5em;
+    padding-top: 25px;
+    text-transform: uppercase;
+}
+
+.topSection2{
+    text-align: center;
+    font-size: 1.5em;
+    padding: 10px;
+    
+}
+
+.deliverySection{
+    text-align: center;
+}
+
+.wrapper{
+    float:left;
+    width:100%;
+    text-align:center;
+  }
+
+  /* https://codepen.io/lauraeddy/pen/KXEwOW?editors=1100 */
+  .button{
+    display: inline-block;
+    color: #fff;
+    font-family: helvetica, sans-serif;
+    font-size: 20px;
+    font-weight: 900;
+    background-color: #000;
+    border: 0;
+    padding: 20px 20px;
+    line-height: 0.428571;
+    background-color: white;
+    color:#FF4444;
+    border:2px solid #FF4444;
+
+  }
+
+  .button2{
+    display: inline-block;
+    color: #fff;
+    font-family: helvetica, sans-serif;
+    font-size: 20px;
+    font-weight: 900;
+    background-color: #FF4444;
+    border: 0;
+    padding: 20px 20px;
+    line-height: 0.428571;
+    border:2px solid #FF4444;
+
+
+  }
+
+  .customerTopSection{
+      text-decoration: none;
+      color:white;
+  }
+
+  /* .company{
+      text-align: center;
+      font-size: 2.5em;
+      font-family: "Lato", sans-serif;
+      padding-top: 100px;
+
+      
+  } */
+
+  /* Solid border */
+/* hr.solid {
+    border-top: 3px solid black;
+    position: relative;
+    top: 50px;
+  } */
+
+.companySection1{
+    text-decoration: none;
+    padding-top: 50px;
+}
+
+.companySection{
+    /* padding-top:250px; */
+}
+  
+.driverButton{
+    text-decoration: none;
+    color:#FF4444;
+}
+
+.companyButton{
+    text-decoration: none;
+    color:#FF4444;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* Services Section */
+
+
+.aboutSectionImg{
+    /* height: 100vh; */
+    width: 90% !important;
+    padding: 5%;    
+ }
+
+
+@media only screen and (max-width: 770px) {
+    /* For mobile: */
+
+
+     .topSection{
+         padding-top: 0px !important;
+     }
+
+     .aboutSectionImg{
+        height: 50vh;
+        width: 90%;
+        padding: 5%;    
+     }
+   
+  }
+
+.deliveryContent{
+    font-size: 1.5em;
+    font-family: "Lato", sans-serif;
+}
+
+.transportationContent{
+    font-size: 1.5em;
+    font-family: "Lato", sans-serif;
+}
+
+@media only screen and (max-width: 800px) {
+    .deliveryContent {
+        font-size: 1em !important;
+    }
+    .transportationContent{
+        font-size: 1em !important;
+        padding-bottom: 11% !important;
+    }
+}
+
+.servicesSectionContent{
+    text-align: center;
+}
+
+#nabvar{
+    top: 0px;
+    
+}
+
+/* https://codepen.io/sitanotern1337/pen/MPVbeL
+I had to modify the code a bit. It's similar to the code shown in this video
+https://www.youtube.com/watch?v=V9CY0F4Wc7M (The "scroll" event in JavaScript | window.onscroll) */
+.hide {
+    display: none;
+  }
+  
+  
+
+  /* https://stackoverflow.com/questions/1144805/scroll-to-the-top-of-the-page-using-javascript?noredirect=1&lq=1   */
+#top-page {
+    width: 50px;
+    position: fixed;
+    right: 30px;
+    bottom: 30px;
+    cursor: pointer;
+    color: white;
+    display: none;
+  }
+
+
+@media only screen and (max-width: 770px) {
+    /* For mobile: */
+     .topSection{
+         padding-top: 0px !important;
+     }
+   
+  }
+
+  .servicesHeader{
+    text-align: center;
+    font-size: 1.5em;
+    padding-top: 30px;
+    text-transform: uppercase;
+    font-family: sans-serif;
+    font-weight: bold;
+  }
+
+  .contactHeader{
+    text-align: center;
+    font-size: 1.5em;
+    /* padding-top: 30px; */
+    text-transform: uppercase;
+    font-family: sans-serif;
+    font-weight: bold;
+  }
+
+@media only screen and (max-width: 770px) {
+    /* For mobile: */
+     .topSection{
+         padding-top: 0px !important;
+     }
+   
+  }
+
+@media only screen and (max-width: 770px) {
+    /* For mobile: */
+    .aboutContent{
+        font-size: 1.5em;
+
+    }
+    .aboutContent{
+     font-size: 1em !important;
+     padding:5px;   
+    }
+   
+  }
+
+
+
+
+
+
+
+
+
+
+@import url('//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css');
+
+a, a:hover {
+	text-decoration: none;
+}
+
+.socialbtns, .socialbtns ul, .socialbtns li {
+  margin: 0;
+  padding: 5px;
+}
+
+.socialbtns li {
+    list-style: none outside none;
+    display: inline-block;
+}
+
+.socialbtns .fa {
+	width: 40px;
+    height: 28px;
+	color: #000;
+	background-color: #FFF;
+	border: 1px solid #000;
+	padding-top: 12px;
+	border-radius: 22px;
+	-moz-border-radius: 22px;
+	-webkit-border-radius: 22px;
+	-o-border-radius: 22px;
+}
+
+/* .socialbtns .fa:hover {
+	color: #FFF;
+	background-color: #FF4444;
+	border: 1px solid #000;
+} */
+
+
+.socialbtns .fa-facebook:hover {
+	color: #FFF;
+	background-color: #FF4444;
+	border: 1px solid #000;
+}
+
+.socialbtns .fa-twitter:hover {
+	color: #FFF;
+	background-color: #FF4444;
+	border: 1px solid #000;
+}
+
+.socialbtns .fa-instagram:hover {
+	color: white;
+    border: 1px solid #000; 
+    background: #FF4444;
+   
+
+}
+
+
+
+.socialbtns .fa-facebook{
+    color:blue;
+  }
+  
+  .socialbtns .fa-twitter{
+    color:#87CEFA;
+  }
+  
+  /* https://stackoverflow.com/questions/56574105/how-to-add-a-color-gradient-to-the-instagram-logo-without-affecting-the-visibili */
+  .socialbtns .fa-instagram{
+    color: transparent;
+    background: -webkit-radial-gradient(30% 107%, circle, #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f 60%, #285AEB 90%);
+    background: -o-radial-gradient(30% 107%, circle, #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f 60%, #285AEB 90%);
+    background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f 60%, #285AEB 90%);
+    background: -webkit-radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f 60%, #285AEB 90%);
+    background-clip: text;
+    -webkit-background-clip: text;
+  }
+
+
+
+  .email{
+    text-align: center;
+    /* font-size: 1em; */
+    /* padding-top: 30px; */
+    font-family: sans-serif;
+    font-weight: bold;
+    color:black;
+  }
+
+  .email :hover{
+      color:#FF4444;
+  }
+
+
+
+  /* Loading Layer of Colors */
+
+  /* https://drive.google.com/drive/folders/1XZvVInE8Q6IHjvMJ6tyqlPZ4apR55Q6- */
+
+  .open
+  {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      pointer-events: none;
+      z-index: 10000;
+  }
+  .open .layer
+  {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      transform-origin: top;
+      animation: open 1s ease-in-out forwards;
+  }
+  .open .layer:nth-child(1)
+  {
+      background: #000;
+      z-index: 2;
+  }
+  .open .layer:nth-child(2)
+  {
+      background: #00FF7F;
+      animation-delay: 1s;
+      z-index: 1;
+  }
+  @keyframes open
+  {
+      0%
+      {
+          transform: scaleY(1);
+      }
+      100%
+      {
+          transform: scaleY(0);
+      }
+  }  
+
+  /* Loading Layer of Colors */
+
+
+  /* Fade Text Animaiton */
+
+  .bannerText
+{
+	position: absolute;
+	top: 50%;
+	left: 10%;
+	transform: translateY(-50%);
+	max-width: 700px;
+}
+.bannerText h2,
+.bannerText h3
+{
+	position: relative;
+	margin: 0;
+	padding: 0;
+	display: inline-block;
+	transform-origin: left;
+	text-transform: uppercase;
+	transform: scaleX(0);
+	animation: revealTextReverse 1s ease-in-out forwards;
+}
+.bannerText h2
+{
+	font-size: 6em;
+	animation-delay: 2s;
+}
+.bannerText h3
+{
+	font-size: 3em;
+	animation-delay: 3s;
+}
+.bannerText h2:before,
+.bannerText h3:before
+{
+	content: '';
+	position: absolute;
+	top: 0;
+	left: 0;
+	background: #000;
+	width: 100%;
+	height: 100%;
+	transform-origin: right;
+	animation: revealText 1s ease-in-out forwards;
+	animation-delay: 3s;
+}
+.bannerText h3:before
+{
+	animation-delay: 4s;
+}
+@keyframes revealText
+{
+	0%
+	{
+		transform: scaleX(1);
+	}
+	100%
+	{
+		transform: scaleX(0);
+	}
+}
+@keyframes revealTextReverse
+{
+	0%
+	{
+		transform: scaleX(0);
+	}
+	100%
+	{
+		transform: scaleX(1);
+	}
+}
+.bannerText p
+{
+	opacity: 0;
+	font-weight: 400;
+	font-size: 1.2em;
+	animation: fadeIn 1s linear forwards;
+	animation-delay: 5s;
+}
+@keyframes fadeIn
+{
+	0%
+	{
+		opacity: 0;
+	}
+	100%
+	{
+		opacity: 1;
+	}
+}
+.bannerText a
+{
+	opacity: 0;
+	display: inline-block;
+	margin: 20px 0 0;
+	padding: 10px 20px;
+	background: #000;
+	color: #fff;
+	font-weight: 700;
+	text-decoration: none;
+	font-size: 1.2em;
+	letter-spacing: 1px;
+	animation: fadeInBottom 0.5s linear forwards;
+	animation-delay: 5.5s;
+}
+@keyframes fadeInBottom
+{
+	0%
+	{
+		transform: translateY(50px);
+		opacity: 0;
+	}
+	100%
+	{
+		transform: translateY(0);
+		opacity: 1;
+	}
+}
+.bulb
+{
+	opacity: 0;
+	position: absolute;
+	right: 10%;
+	top: 50%;
+	transform: translateY(-50%);
+	animation: fadeIn 1s linear forwards;
+	animation-delay: 6s;
+    z-index: 100;
+    width:25%;
+}
+
+/* Fade Text Animaiton */
+
+/* Social Media Icons at the Bottom Right of the Page */
+
+/* .sci
+{
+	position: absolute;
+	bottom: 15px;
+	right: 30px;
+	display: flex;
+	flex-direction: column;
+}
+.sci li
+{
+	opacity: 0;
+	list-style: none;
+	padding: 10px 0;
+	text-align: center;
+	animation: fadeInBottom 0.5s linear forwards;
+}
+.header ul li:nth-child(1),
+.sci li:nth-child(1)
+{
+	animation-delay: 5s;
+}
+.header ul li:nth-child(2),
+.sci li:nth-child(2)
+{
+	animation-delay: 5.25s;
+}
+.header ul li:nth-child(3),
+.sci li:nth-child(3)
+{
+	animation-delay: 5.5s;
+}
+.header ul li:nth-child(4),
+.sci li:nth-child(4)
+{
+	animation-delay: 5.75s;
+}
+.header ul li:nth-child(5),
+.sci li:nth-child(5)
+{
+	animation-delay: 6s;
+}
+.header ul li:nth-child(6),
+.sci li:nth-child(6)
+{
+	animation-delay: 6.25s;
+}
+.sci li a
+{
+	font-size: 1.2em;
+	color: #000;
+} */
+
+/* Social Media Icons at the Bottom Right of the Page */
+
+.flex-container {
+    /* We first create a flex layout context */
+    display: flex;
+    
+    /* Then we define the flow direction 
+       and if we allow the items to wrap 
+     * Remember this is the same as:
+     * flex-direction: row;
+     * flex-wrap: wrap;
+     */
+    flex-flow: row wrap;
+    
+    /* Then we define how is distributed the remaining space */
+    justify-content: space-evenly;
+    
+    padding: 0;
+    margin: 0;
+    list-style: none;
+  }
+
+
+  
+.flex-item {
+    background: black;
+    padding: 5px;
+    width: 200px;
+    height: 150px;
+    margin-top: 20%;
+    line-height: 150px;
+    color: white;
+    font-weight: bold;
+    font-size: 3em;
+    text-align: center;
+  }
+
+
+  /* https://www.w3schools.com/howto/howto_css_cards.asp */
+
+  .card {
+    /* box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2); */
+    transition: 0.3s;
+    width: 45%;
+    margin-top: 10%;
+  }
+
+  .card2 {
+    /* box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2); */
+    transition: 0.3s;
+    width: 45%;
+    margin-top: 7%;
+  }
+  
+  .card:hover {
+    /* box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2); */
+  }
+
+  .card2:hover {
+    /* box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2); */
+  }
+  
+  .container {
+    padding: 2px 16px;
+  }
+
+  #firstCardText{
+    list-style: none;
+    /* font-size: 2.7em; */
+    font-family: "Lato", sans-serif;
+    font-weight: bold;
+    line-height: 1.5;
+  }
+
+  #firstCardText2{
+    /* font-size: .7em; */
+    font-weight:500;
+  }
+
+.firstLi{
+    font-size: 5vw;
+}
+
+.secondLi{
+    font-size: 4vw;      
+}
+
+.thirdLi{
+    font-size: 3vw;      
+}
+
+.fourthLi{
+    font-size: 2vw;      
+}
+
+
+  /* Above this screen size */
+  @media only screen and (min-width: 1000px) {
+    /* .card {
+        width: 40%;
+    } */
+  }
+
+  /* Below this screen size */
+  @media only screen and (max-width: 500px) {
+    .card {
+        margin-top: 20%;
+    }
+  }
+
+  /* Below this screen size */
+  @media only screen and (max-width: 999px) {
+    .card {
+        width: 55%;
+    }
+    .card2 {
+        width: 55%;
+    }
+  }
+
+/* Below this screen size */
+@media only screen and (max-width: 600px) {
+
+    .firstLi{
+        font-size: 8vw;
+    }
+    
+    .secondLi{
+        font-size: 6vw;      
+    }
+    
+    .thirdLi{
+        font-size: 4vw;      
+    }
+    
+    .fourthLi{
+        font-size: 3vw;      
+    }
+
+    #firstCardText{
+        padding-inline-start: 0px;
+        text-align:center;
+    }
+
+    .card {
+        width: 58%;
+    }
+
+    .card2 {
+        width: 100%;
+    }
+
+    }
+
+
+.card a {
+    opacity: 0;
+    display: inline-block;
+    margin: 20px 0 0;
+    padding: 10px 20px;
+    background: #000;
+    color: #fff;
+    font-weight: 700;
+    text-decoration: none;
+    /* font-size: 1em; */
+    letter-spacing: 1.5px;
+    animation: fadeInBottom 0.5s linear forwards;
+    animation-delay: 5.5s;
+    }
+
+
+#popup {
+    position:fixed;
+    top:40%;
+    left:50%;
+    transform: translate(-50%,-50%);
+    width:50%;
+    padding:50px;
+    box-shadow: 0 5px 30px rgba(0,0,0,.30);
+    background: #fff;
+    visibility: hidden;
+    opacity: 0;
+    transition: 0.5s;
+    font-family: "Lato", sans-serif;
+}
+
+
+#popup.active{
+    top:50%;
+    visibility: visible;
+    opacity: 1;
+    transition:0.5s;
+}
+  
+#blur.active{
+	filter: blur(20px);
+	pointer-events: none;
+	user-select:none;
+}  
+
+.close > a {
+    position: relative;
+    padding: 5px 20px;
+    display: inline-block;
+    margin-top: 20px;
+    text-decoration: none;
+    color: #fff;
+    background: #111;
+}
+
+
